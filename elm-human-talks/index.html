@@ -4,10 +4,12 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Elm : la prog frontend réinventée</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/custom.css">
+		<link rel="stylesheet" href="css/theme/blood.css">
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,8 +26,58 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+                    <h1>Elm</h1>
+                    <h2>La prog frontend réinventée</h2>
+
+					<h4>
+						<small>Préparé avec <i id="heart" class="fa fa-heart" aria-hidden="true"></i> par <a href="http://vincent.jousse.org">Vincent Jousse</a> / <a href="http://twitter.com/vjousse">@vjousse</a></small>
+					</h4>
+                </section>
+				<section>
+                    <section>
+                        <h2>J'aime pas la prog frontend</h2>
+                        <p class="fragment">
+                            … et pourtant j'ai essayé.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>DE 1999 à 2015</h2>
+                        <ul>
+                            <li>DHTML</li>
+                            <li>script.aculo.us</li>
+                            <li>Ajax</li>
+                            <li>jQuery</li>
+                            <li>Angular</li>
+                            <li>Mithril.js</li>
+                            <li>…</li>
+                        </ul>
+                        <p class="fragment">Saurez-vous trouver le <strong class="red">Single Point of Failure</strong> ?</p>
+                    </section>
+                    <section>
+                        <img src="images/logo_javascript.png" />
+                        <p>Et l'écosystème qui va avec :<br />ni l'un ni l'autre ne <strong>me</strong> conviennent.</p>
+                    </section>
+                    <section>
+    <pre><code data-trim data-noescape>
+
+1 == 1; //true
+'foo' == 'foo'; //true
+[1,2,3] == [1,2,3]; //false
+new Array(3) == ",,"; //true
+    </code></pre>
+
+                        <img class="fragment" src="images/undefined_is_not.jpg" />
+                    </section>
+                    <section>
+                        <p>C'est trop le foutoir pour moi :-)</p>
+                    </section>
+                </section>
+                <section>
+                    <h2>Mais ça c'était avant …</h2>
+                    <h2 class="fragment">la découverte d'Elm.</h2>
+                </section>
 			</div>
 		</div>
 

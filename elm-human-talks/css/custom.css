@@ -1,0 +1,15 @@
+.red {
+    color: #a23;
+}
+
+#heart{
+  animation: heartbeat 2.5s ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes heartbeat {
+  50%{
+    color: #a23;
+  }
+}
+
