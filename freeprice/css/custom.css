@@ -1,0 +1,23 @@
+@keyframes heartbeat {
+  0% {
+    font-size: 36px;
+  }
+  50%{
+    font-size: 108px;
+    color: #a23;
+  }
+
+  100%{
+    font-size: 36px;
+  }
+}
+
+#heart{
+  animation: heartbeat 2.5s ease-in-out;
+  animation-iteration-count: infinite;
+  padding-top: 50px;
+}
+
+.red {
+    color: #a23;
+}
