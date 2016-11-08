@@ -92,8 +92,180 @@ new Array(3) == ",,"; //true
                     </section>
                 </section>
                 <section>
+                    <section>
                     <h2>Pas d'exceptions</h2>
+
+    <pre><code data-trim data-noescape class="elm fragment">
+numbers =
+    [ 1, 2, 3 ]
+
+first =
+    List.head numbers
+
+doubleFirst =
+    first * 2
+
+    </code></pre>
+    <p class="fragment">Votre premier code <strong>Elm</strong> :')</p>
+                    </section>
+
+                    <section>
+
+                        <p>Et si la liste est vide ?</p>
+    <pre><code data-trim data-noescape class="elm">
+numbers =
+    [ ]
+
+first =
+    List.head numbers
+
+doubleFirst =
+    first * 2
+
+    </code></pre>
+                    </section>
+
+                    <section>
+
+    <pre><code data-trim data-noescape class="elm">
+numbers =
+    [ ]
+
+first =
+    List.head numbers
+
+doubleFirst =
+    first * 2
+
+    </code></pre>
+                        <h2>En JS</h2>
+    <pre><code data-trim data-noescape class="javascript">
+    NaN
+    </code></pre>
+    <p>AND HAVE FUN!</p>
+                    </section>
+
+                    <section>
+
+    <pre><code data-trim data-noescape class="elm">
+numbers =
+    [ ]
+
+first =
+    List.head numbers
+
+doubleFirst =
+    first * 2
+
+    </code></pre>
+                        <h2>En Ruby</h2>
+    <pre><code data-trim data-noescape class="ruby">
+NoMethodError: undefined method `*' for nil:NilClass
+    </code></pre>
+    <p>BIEN MAIS PAS TOP</p>
+                    </section>
+                    <section>
+                        <h2>En Elm</h2>
+
+                        <img class="fragment" src="images/elm-compile-error.png" />
+                    </section>
+                    <section>
+    <pre><code data-trim data-noescape class="elm">
+numbers =
+    [ ]
+
+first =
+    Maybe.withDefault 0 (List.head numbers)
+
+doubleFirst =
+    first * 2
+
+    </code></pre>
+    <p>Elm vous force à gérer ce cas là.</p>
+
+                    </section>
                 </section>
+                <section>
+                    <section>
+                        <h2>Un compilateur utile</h2>
+                        <p>car compréhensible</p>
+
+                    </section>
+
+                    <section>
+
+        <pre><code data-trim data-noescape class="elm">
+    numbers =
+        [ ]
+
+    first =
+        Maybe.withDefaul 0 (List.head numbers)
+
+    doubleFirst =
+        first * 2
+
+        </code></pre>
+                    </section>
+
+                    <section>
+                        <img src="images/elm-suggestion.png" />
+                    </section>
+                </section>
+                <section>
+                    <h2>Si ça compile, c'est que ça marche</h2>
+                    <ul>
+                        <li>Pas de null pointer</li>
+                        <li>Pas d'erreur de typo</li>
+                        <li>Vive le refactoring</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                    <h2>Et en plus c'est rapide</h2>
+                    </section>
+
+                    <section>
+                        <img src="images/elm-performance.png" />
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                    <h2>Et en cas de coup dur</h2>
+                    </section>
+
+                    <section>
+                        <h3>Ça s'intègre à du JS</h3>
+                        <img src="images/elm-js.png" />
+                    </section>
+                </section>
+
+                <section>
+                    <h2>La cerise sur le gâteau</h2>
+                    <p class="fragment">C'est beginner friendly :-)</p>
+                </section>
+
+                <section>
+                    <h2>LA QUESTION QUI TUE</h2>
+                    <p class="fragment">C'est utilisé en production ton truc ?</p>
+                    <p class="fragment">Il parait que oui …</p>
+                </section>
+                <section>
+                    <img src="images/nuage_juppe.png" />
+                </section>
+
+				<section>
+					<h2>Des questions ?</h2>
+         <p class="quote"><i class="icon-quote-left"></i><em>Fait à la main !</em><i class="icon-quote-right"></i></p>
+         <ul>
+             <li>Reveal.js <span><a href="http://lab.hakim.se/reveal-js/">http://lab.hakim.se/reveal-js/</a></span></li>
+             <li>Font-awesome <span><a href="http://fontawesome.io">http://fontawesome.io</a></span></li>
+             <li>Chromium</li>
+             <li>Vim</li>
+             <li>ArchLinux</li>
+         </ul>
+         <p style="text-align: center"><small><a href="http://vincent.jousse.org">Vincent Jousse</a> / <a href="http://twitter.com/vjousse">@vjousse</a></small></p>
+				</section>
 			</div>
 		</div>
 
