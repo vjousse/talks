@@ -1,0 +1,23 @@
+.red {
+    color: #a23;
+}
+
+#heart{
+  animation: heartbeat 2.5s ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes heartbeat {
+  50%{
+    color: #a23;
+  }
+}
+
+body .reveal .home-title h1 {
+    font-size:2.77em;
+}
+
+
+body .reveal .home-title h2 {
+    font-size:1.5em;
+}

@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Elm : la prog frontend réinventée</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/custom.css">
+		<link rel="stylesheet" href="css/theme/blood.css">
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="home-title">
+                    <h1>Elm & Contenteditable</h1>
+                    <h2>Tout n'est pas perdu !</h2>
+
+					<h4>
+                        <small>Préparé avec <i id="heart" class="fa fa-heart" aria-hidden="true"></i> par Vincent Jousse<br /> <a href="http://mastodon.social/@vjousse">@vjousse@mastodon.social</a></small>
+					</h4>
+                </section>
+				<section>
+                    <ul>
+                        <li>Maître de conférences au Mans</li>
+                        <li>Co-fondateur de <strong><a href="https://voxolab.com">Voxolab</a></strong></li>
+                        <li>Directeur Technique d'<strong><a href="https://allo-media.fr">Allo-média</a></strong></li>
+                    </ul>
+                    <p style="padding-top: 50px" class="fragment">Et bien sûr…</p>
+                    <p style="padding-top: 50px" class="fragment"><strong>Libriste</strong> et <strong>Vim</strong>iste convaincu :-)<br /><strong><a href="https://vimebook.com">Vimebook.com</a></strong></p>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Mon besoin</h2>
+                        <p class="fragment">
+                        Pouvoir éditer du texte "riche" contenant du <strong>HTML</strong>, le tout avec <strong>Elm</strong>
+                        </p>
+                    </section>
+                    <section data-background-image="images/the_transcriber.gif" data-background-size="80%">
+                    </section>
+                </section>
+                <section>
+                    <section>
+                    <h2>Contenteditable</h2>
+
+    <pre><code data-trim class="hljs">
+&lt;div contenteditable=""&gt;
+Meetup &lt;strong&gt;Elm&lt;/strong&gt; &lt;span style="color:red;"&gt;FTW&lt;span&gt;
+&lt;/div&gt;
+</code></pre>
+                    <div>
+                        <img src="images/contenteditable_hello_paris.gif" />
+                    </div>
+                    </section>
+
+                    <section>
+                        <p>Mais avec <strong>Elm</strong>,<br />
+                        notre vue ne fait qu'afficher notre modèle</p>
+                        <p class="fragment" style="padding-top:100px">Le contenu du <strong>contenteditable</strong> doit être dans le modèle,<br />et là…</p>
+                    </section>
+
+                    <section>
+                        <h1>C'est le drame</h1>
+                    </section>
+                    <section>
+                        <h2>En Elm</h2>
+                        <ul>
+                            <li>Comment gérer la <strong>position du curseur</strong> ?</li>
+                            <li>Les <strong>sélections</strong> possibles ?</li>
+                            <li>Le fait que la donnée soit du <strong>HTML</strong> ?</li>
+                        </ul>
+
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Première approche</h2>
+                        <h3>Draft.js</h3>
+
+                    </section>
+
+                    <section>
+                        <img src="images/draft_js.png" />
+                    </section>
+
+
+                    <section>
+                        <h2>Ça partait bien</h2>
+                        <ul>
+                            <li>React</li>
+                            <li>Immutable.JS</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Mais…</h2>
+                        <ul>
+                            <li><strong>Duplication des états</strong> Elm/React</li>
+                            <li><strong>"onclick"</strong> sur les éléments compliqué</li>
+                            <li><strong>Performances insatisfaisantes</strong></li>
+                            <li><strong>React !</strong></li>
+                        </ul>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Deuxième approche</h2>
+                        <h3>CKeditor</h3>
+
+                    </section>
+
+                    <section>
+                        <img src="images/ckeditor.png" />
+                    </section>
+
+
+                    <section>
+                        <h2>Bons côtés</h2>
+                        <ul>
+                            <li>Rapide et fonctionnel</li>
+                            <li>JS <em>classique</em></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Mais…</h2>
+                        <ul>
+                            <li><strong>Duplication des états</strong> Elm/React</li>
+                        </ul>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Dernière approche</h2>
+                        <h3>WebComponents</h3>
+
+                    </section>
+
+                    <section>
+                        <h2>L'idée</h2>
+                        <ul>
+                            <li>Garder <strong>contenteditable</strong></li>
+                            <li>Créer un nouvel élément HTML</li>
+                            <li>Mapper le modèle Elm dans un <strong>attribut</strong></li>
+                            <li><strong>Encapsuler</strong> le comportement JS</li>
+                        </ul>
+
+                    </section>
+
+                    <section>
+                        <img style="height:650px;" src="images/webcomponent.png" />
+                    </section>
+
+                    <section>
+                        <img style="height:200px;" src="images/elm_custom_text_editor.png" />
+                    </section>
+
+                    <section>
+                        <img style="height:250px;" src="images/elm_custom_text_editor_events.png" />
+                    </section>
+
+                    <section>
+                        <img style="height:90px;" src="images/custom_text_editor.png" />
+                    </section>
+
+
+                    <section>
+                        <h3>Mais tout n'est pas rose</h3>
+                        <h4 class="fragment">Chrome uniquement :-(</h4>
+                    </section>
+
+                    <section>
+                        <h2>Les bon côtés</h2>
+                        <ul>
+                            <li>On reste au <strong>maximum dans Elm</strong></li>
+                            <li><strong>Pas de duplication</strong> d'état</li>
+                            <li>Elm continue à gérer quasi tout le <strong>DOM</strong></li>
+                            <li>Code JS bien <strong>encapsulé</strong></li>
+                        </ul>
+                        <p style="padding-top:20px">et cerise sur le gâteau…</p>
+                    </section>
+
+                    <section>
+                        <h2>ELM debugger</h2>
+                        <p class="fragment">Changer le modèle Elm…</p>
+                        <p class="fragment">…change l'attribut du webcomponent…</p>
+                        <p class="fragment">…met à jour le contenteditable.</p>
+                        <p style="padding-top:20px"class="fragment">La boucle est bouclée !</p>
+                    </section>
+
+                </section>
+
+				<section>
+					<h2>Des questions ?</h2>
+         <p class="quote"><i class="icon-quote-left"></i><em>Fait à la main !</em><i class="icon-quote-right"></i></p>
+         <ul>
+             <li>Reveal.js <span><a href="http://lab.hakim.se/reveal-js/">http://lab.hakim.se/reveal-js/</a></span></li>
+             <li>Font-awesome <span><a href="http://fontawesome.io">http://fontawesome.io</a></span></li>
+             <li>Chromium</li>
+             <li>Vim</li>
+             <li>ArchLinux</li>
+         </ul>
+         <p style="text-align: center"><small><a href="http://vincent.jousse.org">Vincent Jousse</a><br /><a href="http://twitter.com/vjousse">@vjousse</a><br /><a href="http://mastodon.social/@vjousse">vjousse@mastodon.social</a></small></p>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
