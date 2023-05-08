@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Vim</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/blood.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    <link rel="stylesheet" href="fontawesome/css/all.min.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section class="home-title">
+          <h1>Vim</h1>
+          <h2>Mais pourquoi s'infliger ça ?</h2>
+
+          <h4 style="padding-top: 50px">
+            <small
+              >Préparé avec
+              <i id="heart" class="fa fa-heart" aria-hidden="true"></i> par
+              Vincent Jousse<br />
+              <a href="http://mamot.fr/@vjousse">@vjousse@mamot.fr</a></small
+            >
+          </h4>
+        </section>
+
+        <section>
+          <p>
+            <em><strong>Once upon a time</strong></em>
+          </p>
+          <p>Analyste programmeur, CTO, prof, dirigeant,…</p>
+          <p class="fragment">
+            Développeur <em>Python</em>, <em>Rust</em> & <em>Elm</em>
+          </p>
+          <p class="fragment">
+            <i class="fa-solid fa-circle-arrow-down"></i>
+            <br />En mission chez
+            <strong><a href="https://beta.gouv.fr/">Béta Gouv</a></strong>
+          </p>
+          <p style="padding-top: 50px" class="fragment">Et bien sûr…</p>
+
+          <p style="padding-top: 50px" class="fragment">
+            <strong>Libriste</strong> et <strong>Vim</strong>iste convaincu
+            :-)<br /><strong
+              ><a href="https://vimebook.com">Vimebook.com</a></strong
+            >
+          </p>
+        </section>
+
+        <section>
+          <section>
+            <h2>Vim : Kesako ?</h2>
+          </section>
+          <section>
+            Un éditeur de texte inventé dans les <strong>années 70</strong>
+          </section>
+          <section>Utilisable uniquement au clavier</section>
+          <section>En ligne de commande</section>
+          <section data-background-image="images/vim.png">
+            <span class="bg-span">Un truc qui fait un peu peur</span>
+          </section>
+          <section data-background-image="images/nvim.png">
+            <span class="bg-span">Ou qui ressemble à VSCode</span>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Vim : Pourquoi ?</h2>
+          </section>
+          <section>
+            <p>
+              Parce que ça fait <strong>50 ans</strong> que le concept existe
+            </p>
+            <em class="fragment" style="font-size: 0.6em"
+              ><i class="fa-solid fa-triangle-exclamation red"></i> un
+              <strong>argument fallacieux</strong> s'est glissé dans ce slide,
+              saurez-vous le retrouver ?</em
+            >
+            <p class="fragment" style="font-size: 0.8em">
+              <i class="fa-brands fa-youtube" style="color: #ff0000"></i> Chaîne
+              <a href="https://www.youtube.com/channel/UCMFcMhePnH4onVHt2-ItPZw"
+                >Hygiène Mentale</a
+              >
+            </p>
+          </section>
+          <section>
+            <ul>
+              <li>Disponible partout</li>
+              <li>Utilisation sans souris</li>
+              <li>Là pour durer</li>
+              <li>Facilite l'édition de texte</li>
+              <li>Fait bien en société</li>
+              <li>Moderne : <strong>NeoVim</strong></li>
+            </ul>
+          </section>
+          <section>
+            <h3>Mon expérience</h3>
+          </section>
+          <section>
+            Jeune mais déjà si vieux : des <strong>TMS</strong> à 30 ans
+            <p class="fragment">
+              <strong>T</strong>roubles
+              <strong>M</strong>usculo-<strong>S</strong>quelettiques
+            </p>
+          </section>
+          <section>
+            <img src="images/Typing-home-keys-hand-position.svg" />
+          </section>
+          <section>Vim : un <strong>éditeur modal</strong></section>
+          <section>Mode insertion</section>
+          <section>Mode visuel / normal</section>
+          <section>Mode commande</section>
+        </section>
+
+        <section>
+          <h2>Vim : et concrêtement ?</h2>
+        </section>
+
+        <section>
+          <h2>Vim : les bonnes raisons de ne pas s'y mettre</h2>
+          On veut tout vimifier Faut passer du temps à apprendre On oublier les
+          commandes les plus cools
+        </section>
+
+        <section>
+          <h2>Le futur de Vim : NeoVim</h2>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        slideNumber: "c/t",
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
